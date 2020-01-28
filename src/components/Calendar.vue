@@ -59,7 +59,7 @@
               :disabled="eventDate.soldOut"
               @click="$emit('select-show', eventDate, showtime)"
             >
-              {{showtime}}
+              {{formatShowtime(showtime)}}
             </button>
             <span class="unavailable" v-show="!eventDate.showtimes">
               Unavailable
@@ -156,6 +156,9 @@ export default {
     },
     getDateOfMonth(date) {
       return moment(date, 'DD-MM-YYY').format('D');
+    },
+    formatShowtime(showtime) {
+      return moment(showtime, 'HH:mm').format('h:mm a');
     },
   },
 };
