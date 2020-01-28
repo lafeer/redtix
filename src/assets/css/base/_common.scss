@@ -1,0 +1,112 @@
+body {
+  background-color: #fcfcfc;
+}
+
+#app {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
+  color: #2c3e50;
+  max-width: 1280px;
+  margin: 60px auto;
+  padding: 0 10px;
+  display: flex;
+  flex-flow: column-reverse wrap;
+}
+
+main, aside {
+  margin: 20px 0;
+}
+
+aside {
+  position: initial;
+  top: 60px;
+}
+
+h1, .h1 {
+  color: rgba(241, 59, 84, 0.8);
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2, .h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 10px;
+  border-bottom: 0.25px solid rgba(29, 29, 29, 0.6);
+}
+
+h3, .h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: rgba(29, 29, 29, 0.65);
+}
+
+h4, .h4 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(29, 29, 29, 0.65);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 6px 12px;
+  background: 0;
+  border: 1px solid rgba(241, 59, 84, 0.8);
+  box-shadow: 0px 5px 10px rgba(29, 29, 29, 0.08);
+  color: rgba(241, 59, 84, 0.8);
+  border-radius: 3px;
+  height: 38px;
+  font-weight: 800;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: initial;
+  }
+
+  &--inline {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+@include breakpoint($md-device) {
+  #app {
+    flex-direction: column;
+  }
+
+  .btn {
+    height: 30px;
+  }
+}
+
+@include breakpoint($lg-device) {
+  #app {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+  }
+
+  h1, .h1 {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  h2, .h2 {
+    margin: 0 0 20px;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  aside {
+    height: 460px;
+    position: sticky;
+  }
+}
